@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Make a Reservation – FindDine</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Find<span>Dine</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="restaurants.html">Restaurants</a></li>
+          <li><a href="recommend.html">Recommend</a></li>
+          <li><a href="reservation.html" class="active">Reserve</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="bill.html">Estimate Bill</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <div class="container">
+      <h1>Make a Reservation</h1>
+      <p>Secure your table with a small deposit. We'll confirm your booking by email.</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="form-section form-section--reservation">
+      <div class="form-card">
+        <h2 class="form-card-title">Complete your booking</h2>
+        <form
+          id="reservation-form"
+          method="POST"
+          action="http://mercury.swin.edu.au/it105263125/cos10005/regtest.php"
+          novalidate
+        >
+          <h3 class="form-heading">Personal Details</h3>
+
+          <div class="form-group">
+            <label for="res-name">Full Name</label>
+            <input
+              type="text"
+              id="res-name"
+              name="full_name"
+              placeholder="Jane Smith"
+              autocomplete="name"
+              required
+            />
+            <span class="error-msg" role="alert"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-email">Email Address</label>
+              <input
+                type="email"
+                id="res-email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+              <span class="error-msg" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="res-phone">Phone Number</label>
+              <input
+                type="tel"
+                id="res-phone"
+                name="phone"
+                placeholder="04xxxxxxxx"
+                autocomplete="tel"
+                required
+              />
+              <span class="error-msg" role="alert"></span>
+            </div>
+          </div>
+
+          <h3 class="form-heading">Booking Details</h3>
+
+          <div class="form-group">
+            <label for="res-restaurant">Restaurant</label>
+            <select id="res-restaurant" name="restaurant" required>
+              <option value="">— Select a restaurant —</option>
+            </select>
+            <span class="error-msg" role="alert"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-datetime">Date &amp; Time</label>
+              <input
+                type="datetime-local"
+                id="res-datetime"
+                name="reservation_datetime"
+                required
+              />
+              <span class="error-msg" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="res-people">Number of People</label>
+              <input
+                type="number"
+                id="res-people"
+                name="people"
+                min="1"
+                max="50"
+                placeholder="2"
+                required
+              />
+              <span class="error-msg" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="res-requests">Special Requests <span class="label-hint">(optional)</span></label>
+            <textarea
+              id="res-requests"
+              name="special_requests"
+              placeholder="Dietary needs, seating preferences, celebrations…"
+            ></textarea>
+          </div>
+
+          <h3 class="form-heading">Deposit &amp; Payment</h3>
+
+          <div class="form-group">
+            <label>Deposit Amount</label>
+            <div class="deposit-row">
+              <span id="deposit-display" class="deposit-amount">—</span>
+              <span class="deposit-note">(automatically set based on selected restaurant)</span>
+            </div>
+            <input type="hidden" id="deposit-hidden" name="deposit_amount" value="" />
+          </div>
+
+          <div class="form-group">
+            <label>Deposit Method</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="payment-method" value="voucher" />
+                Voucher
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="payment-method" value="online" />
+                Online Payment
+              </label>
+            </div>
+            <span class="error-msg" id="payment-error" role="alert"></span>
+          </div>
+
+          <div class="form-group hidden" id="voucher-section">
+            <label for="voucher-code">Voucher Code <span class="label-hint">(12 digits)</span></label>
+            <input
+              type="text"
+              id="voucher-code"
+              name="voucher_code"
+              placeholder="e.g. 123456789012"
+              maxlength="12"
+            />
+            <span class="error-msg" role="alert"></span>
+          </div>
+
+          <div class="form-group hidden" id="card-section">
+            <label for="card-type">Card Type</label>
+            <select id="card-type" name="card_type">
+              <option value="visa">Visa (16 digits)</option>
+              <option value="mastercard">Mastercard (16 digits)</option>
+              <option value="amex">American Express (15 digits)</option>
+            </select>
+            <span class="error-msg" role="alert"></span>
+          </div>
+
+          <div class="form-group hidden" id="card-number-section">
+            <label for="card-number">Card Number <span class="label-hint">(test card only)</span></label>
+            <input
+              type="text"
+              id="card-number"
+              name="card_number"
+              placeholder="e.g. 4111111111111111"
+              maxlength="16"
+            />
+            <span class="error-msg" role="alert"></span>
+          </div>
+
+          <h3 class="form-heading">Billing Information</h3>
+
+          <div class="form-group">
+            <label class="checkbox-option checkbox-option--spaced">
+              <input type="checkbox" id="same-email" name="same_email" />
+              Same as email address above
+            </label>
+            <label for="billing-email">Billing Email Address</label>
+            <input
+              type="email"
+              id="billing-email"
+              name="billing_email"
+              placeholder="billing@example.com"
+              autocomplete="email"
+              required
+            />
+            <span class="error-msg" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            Confirm Reservation
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Find<span>Dine</span></a>
+          <p>
+            Melbourne's premier restaurant discovery and reservation platform.
+            Connecting diners with extraordinary experiences since 2024.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="recommend.html">Recommend</a></li>
+            <li><a href="reservation.html">Reserve</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="bill.html">Estimate Bill</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FindDine. Created for COS10005 Web Development, Swinburne University.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

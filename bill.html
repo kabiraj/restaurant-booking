@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bill calculator</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Find<span>Dine</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="restaurants.html">Restaurants</a></li>
+          <li><a href="recommend.html">Recommend</a></li>
+          <li><a href="reservation.html">Reserve</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="bill.html" class="active">Estimate Bill</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <div class="bill-container">
+      <h1>Estimate Your Bill</h1>
+      <p>Select a restaurant and dishes to preview an estimated meal total.</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="bill-layout">
+      <section class="bill-controls">
+        <div class="form-card">
+          <h2 class="form-card-title">Your order</h2>
+          <p class="form-card-intro">
+            Choose a restaurant, then tick the items you plan to order. The receipt updates automatically.
+          </p>
+
+          <form id="bill-form" novalidate>
+            <div class="form-group">
+              <label for="bill-restaurant">Restaurant</label>
+              <select id="bill-restaurant" name="restaurant">
+                <option value="">Select a restaurant</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="bill-dishes-group">
+              <label>Menu items</label>
+              <div id="bill-dishes-list">
+                <p class="bill-hint">Select a restaurant to view dishes.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="bill-receipt-wrap">
+        <h2 class="form-card-title bill-receipt-title">Estimated receipt</h2>
+        <div class="bill-receipt-column">
+          <div class="bill-paper" id="bill-receipt">
+            <div id="bill-receipt-content"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Find<span>Dine</span></a>
+          <p>
+            Melbourne's premier restaurant discovery and reservation platform.
+            Connecting diners with extraordinary experiences since 2024.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="recommend.html">Recommend</a></li>
+            <li><a href="reservation.html">Reserve</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="bill.html">Estimate Bill</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FindDine. Created for COS10005 Web Development, Swinburne University.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

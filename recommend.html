@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant Recommendation</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Find<span>Dine</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="restaurants.html">Restaurants</a></li>
+          <li><a href="recommend.html" class="active">Recommend</a></li>
+          <li><a href="reservation.html">Reserve</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="bill.html">Estimate Bill</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-banner">
+    <div class="container">
+      <h1>Find Your Perfect Match</h1>
+      <p>Tell us your preferences and we'll recommend the ideal restaurant for you.</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="recommend-layout">
+      <aside>
+        <div class="form-card">
+          <h2>Your Preferences</h2>
+          <p>
+            Fill in the form and we'll match you with the best options.
+          </p>
+
+          <form id="recommend-form" novalidate>
+            <div class="form-group">
+              <label for="pref-dietary">Dietary Preference</label>
+              <select id="pref-dietary" name="dietary" required>
+                <option value="">Select</option>
+                <option value="None">No Restrictions</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Halal">Halal</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pref-budget">Budget Range (per person)</label>
+              <select id="pref-budget" name="budget" required>
+                <option value="">— Select —</option>
+                <option value="low">Budget ($20-$35)</option>
+                <option value="mid">Mid-range ($35-$65)</option>
+                <option value="high">Premium ($65+)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pref-purpose">Dining Occasion</label>
+              <select id="pref-purpose" name="purpose" required>
+                <option value="">— Select —</option>
+                <option value="Family">Family Outing</option>
+                <option value="Date">Romantic Date</option>
+                <option value="Business">Business Dinner</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              Find Restaurants
+            </button>
+
+          </form>
+        </div>
+      </aside>
+
+      <section class="recommended-restaurant">
+        <h2 class="form-card-title">Your recommendation</h2>
+        <div id="recommendation-results">
+          <div class="placeholder">
+            <p>Your recommendations will appear here once you submit your preferences.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Find<span>Dine</span></a>
+          <p>
+            Melbourne's premier restaurant discovery and reservation platform.
+            Connecting diners with extraordinary experiences since 2024.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="recommend.html">Recommend</a></li>
+            <li><a href="reservation.html">Reserve</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="bill.html">Estimate Bill</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FindDine. Created for COS10005 Web Development, Swinburne University.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
