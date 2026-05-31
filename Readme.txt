@@ -1,7 +1,8 @@
 COS10005 Web Development – Assignment 2, Semester 1 2026
 
 Student ID: 105263125
-GitHub: https://github.com/kabiraj/Online-restaurant
+GitHub: https://github.com/kabiraj/restaurant-booking
+
 
 
 1. WEBSITE STRUCTURE
